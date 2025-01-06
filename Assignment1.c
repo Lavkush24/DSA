@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<math.h>
 
 //count set bits in an integer
 int count_set_bit(int n) {
@@ -49,7 +50,7 @@ void set_bit_one_to_n(int n) {
         int c = count_set_bit(i);
         count += c;
     }
-    printf("%d set bits", count);
+    printf("%d set bits\n", count);
 }
 
 
@@ -63,17 +64,36 @@ int square(int n) {
 //divide a two integers without using * ,/ , and % mod operator
 
 //powers set
+void powerSet(int n, int arr[]) {
+    printf("Power set: \n");
+    for(int i=0; i<pow(2,n); i++) {
+        int data = i, count = 0, mask = 1;
+        printf("{");
+        while(data != 0) {
+            if((i&mask) != 0) {
+                printf("%d,",arr[count]);
+            }
+            data = data>>1;
+            mask = mask<<1;
+            count++;
+        }
+        printf("}\n");
+    }
+}
+
+
 
 
 int main() {
+    int arr[] = {3,4,5,10};
     printf("%d\n",count_set_bit(11));
     position_of_set_bit(11);
     printf("\n");
     power_of_two(16);
     printf("\n");
     set_bit_one_to_n(10);
-    printf("\n%d", divide(10,3));
-
+    // printf("\n%d\n", divide(10,3));
+    powerSet(4,arr);
     // printf("%d", set_bit_one_to_n(0));
 
     return 0;
