@@ -56,12 +56,20 @@ void set_bit_one_to_n(int n) {
 
 //find to non repeating elements in a array of repeating elements
 //count number of bit flipped to convert A to B
+void A_to_B(int a, int b) {
+    int counter = a^b;
+    int result = count_set_bit(counter);
+    printf("%d bit flipped to convert A to B\n",result);
+}
+
 //calculate square of a number without using /,* and pow()
 int square(int n) {
 
 }
 
 //divide a two integers without using * ,/ , and % mod operator
+
+
 
 //powers set
 void powerSet(int n, int arr[]) {
@@ -85,16 +93,15 @@ void powerSet(int n, int arr[]) {
 
 
 int main() {
-    int arr[] = {3,4,5,10};
+    int arr[] = {3,4,5};
     printf("%d\n",count_set_bit(11));
     position_of_set_bit(11);
     printf("\n");
     power_of_two(16);
     printf("\n");
     set_bit_one_to_n(10);
-    // printf("\n%d\n", divide(10,3));
-    powerSet(4,arr);
-    // printf("%d", set_bit_one_to_n(0));
+    powerSet(3,arr);
+    A_to_B(9,3);
 
     return 0;
 }
