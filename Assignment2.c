@@ -176,6 +176,12 @@ void triangle(int n) {
 }
 
 
+// Draw the pattern  n=5
+void numberSquare(int n) {
+    
+}
+
+
 int main() {
     int n = 3;
     triangle(n);
